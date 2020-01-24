@@ -38,7 +38,7 @@ atlassian-ide-plugin.xml
 target
 
 # Java artifacts
-*.jar
+#*.jar
 *.war
 *.ear
 *.class
