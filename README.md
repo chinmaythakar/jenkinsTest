@@ -35,3 +35,5 @@ run this command in the command line:
 ```
 mvn spring-boot:run
 ```
+few commands to run
+sudo setfacl --modify user:tomcat:rw /var/run/doexitcker.sock
