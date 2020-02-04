@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-crud-app
+  labels:
+    app: my-crud-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-crud-app
+  template:
+    metadata:
+      labels:
+        app: my-crud-app
+    spec:
+      containers:
+      - name: my-crud-app
+        image: thakarchinmay/crudapp:latest
+        ports:
+        - containerPort: 3333
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-crudapp-svc
+  labels:
+    app: my-crud-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3333
+  selector:
+    app: my-crud-app
