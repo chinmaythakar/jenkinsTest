@@ -15,10 +15,13 @@ spec:
         app: my-crud-app
     spec:
       containers:
-      - name: my-crud-app
-        image: thakarchinmay/crudapp:latest
-        ports:
-        - containerPort: 3333
+        - name: my-crud-app
+          image: iad.ocir.io/orasenatdpltoci01/thakarchinmay/crudapp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3333
+      imagePullSecrets:
+        - name: password123
 ---
 apiVersion: v1
 kind: Service
@@ -29,6 +32,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 3333
+    - port: 3333
   selector:
     app: my-crud-app
