@@ -1,5 +1,4 @@
 # springboot-crud-demo
-asfgdshjt
 Spring Boot CRUD demo is demonstrating how to implement simple CRUD operations with a `Product`.
 sdfghhjdrs
 ## What's inside 
