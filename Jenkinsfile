@@ -7,7 +7,7 @@ pipeline {
         registry = "iad.ocir.io/orasenatdpltoci01/thakarchinmay/crudapp"
     }
     stages {
-        stage('Clean')
+        stage('Clean'){
             steps {
                 sh 'mvn clean'
             }
