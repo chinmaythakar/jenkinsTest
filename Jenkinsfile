@@ -28,9 +28,10 @@ pipeline {
                 registryCredential = '4a6efec0-dd7b-4bb5-b5f8-62e1c7b52b26'
             }
             steps{
+
                 script {
                     def appimage = docker.build registry + ":$BUILD_NUMBER"
-                    docker.withRegistry( '', registryCredential ) {
+                    docker.withRegistry( 'https://iad.ocir.io/v2/', registryCredential ) {
                         appimage.push('latest')
                     }
                 }
